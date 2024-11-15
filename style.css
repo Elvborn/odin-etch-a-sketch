@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#grid-container{
+    border: 5px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid-container > div{
+    display: flex;
+}
+
+.square{
+    border: 2px solid black;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+}
