@@ -4,6 +4,16 @@
 
 body{
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    background-color: rgb(24, 214, 132);
+    border-radius: 20px;
+    padding: 40px;
+
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -12,6 +22,7 @@ body{
 
 #grid-container{
     border: 5px solid black;
+    background-color: white;
 
     display: flex;
     flex-direction: column;
