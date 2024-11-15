@@ -1,20 +1,23 @@
 const container = document.querySelector("#grid-container");
-const btnSize = document.querySelector("button");
+const btnSize = document.querySelector(".btnSize");
+const btnReset = document.querySelector(".btnReset");
+
 
 const gridSizeInPX = 500;
+let gridCount = 16;
 
-function generateGrid(size = 16){
-    if(size > 100) size = 100;
+function generateGrid(){
+    if(gridCount > 100) gridCount = 100;
     container.innerHTML = "";
 
-    for(let i = 0; i < size; i++){
+    for(let i = 0; i < gridCount; i++){
         const row = document.createElement("div");
     
-        for(let j = 0; j < size; j++){
+        for(let j = 0; j < gridCount; j++){
             const square = document.createElement("div");
             square.classList.add("square");
-            square.style.width = `${gridSizeInPX / size}px`;
-            square.style.height = `${gridSizeInPX / size}px`;
+            square.style.width = `${gridSizeInPX / gridCount}px`;
+            square.style.height = `${gridSizeInPX / gridCount}px`;
 
             square.opacity = 10;
             square.color = [];
@@ -53,6 +56,10 @@ function getRandomRGBColor(){
 generateGrid();
 
 btnSize.addEventListener("click", () => {
-    const gridSize = prompt("Enter grid size:", 16);
-    generateGrid(gridSize);
+    gridCount = prompt("Enter grid gridcount:", 16);
+    generateGrid();
+});
+
+btnReset.addEventListener("click", () => {
+    generateGrid();
 });
